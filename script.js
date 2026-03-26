@@ -98,6 +98,31 @@ document.addEventListener('DOMContentLoaded', () => {
             let startX = 0;
             let isDragging = false;
 
+            // Create arrow buttons
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'carousel-arrow carousel-prev';
+            prevBtn.innerHTML = '&#10094;'; // Left angle bracket
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'carousel-arrow carousel-next';
+            nextBtn.innerHTML = '&#10095;'; // Right angle bracket
+            
+            carousel.appendChild(prevBtn);
+            carousel.appendChild(nextBtn);
+            
+            // Click listeners for arrows
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            });
+            
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            });
+
             // Mouse Drag Support
             carousel.addEventListener('mousedown', (e) => {
                 isDragging = true;

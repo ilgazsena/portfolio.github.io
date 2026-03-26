@@ -564,6 +564,36 @@ footer {
     opacity: 1;
 }
 
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(108, 8, 32, 0.5);
+    color: var(--color-misty-rose);
+    border: none;
+    font-size: 1.5rem;
+    padding: 5px 12px;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.3s;
+    border-radius: 5px;
+    opacity: 0.7;
+    pointer-events: auto;
+}
+
+.carousel-arrow:hover {
+    background: rgba(108, 8, 32, 0.9);
+    opacity: 1;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
     .about-grid {
