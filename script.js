@@ -68,15 +68,59 @@ document.addEventListener('DOMContentLoaded', () => {
     carousels.forEach(carousel => {
         const slides = carousel.querySelectorAll('.carousel-slide');
         if (slides.length > 1) {
-            let currentSlide = 0;
-            // Add staggered interval to prevent identical animations starting at exactly the same time
-            setTimeout(() => {
-                setInterval(() => {
-                    slides[currentSlide].classList.remove('active');
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    slides[currentSlide].classList.add('active');
-                }, 3000); // 3 seconds per slide
-            }, Math.random() * 2000);
+            // Create dots container
+            const dotsContainer = document.createElement('div');
+            dotsContainer.className = 'carousel-dots';
+            
+            // Create individual dots
+            const dots = [];
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
+                dotsContainer.appendChild(dot);
+                dots.push(dot);
+            });
+            carousel.appendChild(dotsContainer);
+
+            // Function to change active slide and dot
+            const showSlide = (index) => {
+                slides.forEach((slide, i) => {
+                    if (i === index) slide.classList.add('active');
+                    else slide.classList.remove('active');
+                });
+                dots.forEach((dot, i) => {
+                    if (i === index) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                });
+            };
+
+            // Scrubbing logic on mousemove (hover)
+            carousel.addEventListener('mousemove', (e) => {
+                const rect = carousel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const width = rect.width;
+                
+                // Calculate which slide to show based on mouse X position
+                const percentage = Math.max(0, Math.min(1, x / width));
+                const slideIndex = Math.floor(percentage * slides.length);
+                const safeIndex = slideIndex === slides.length ? slides.length - 1 : slideIndex;
+                
+                showSlide(safeIndex);
+            });
+
+            // Touch fallback for mobile swiping intuition
+            carousel.addEventListener('touchmove', (e) => {
+                const rect = carousel.getBoundingClientRect();
+                const touch = e.touches[0];
+                const x = touch.clientX - rect.left;
+                const width = rect.width;
+                
+                const percentage = Math.max(0, Math.min(1, x / width));
+                const slideIndex = Math.floor(percentage * slides.length);
+                const safeIndex = slideIndex === slides.length ? slides.length - 1 : slideIndex;
+                
+                showSlide(safeIndex);
+            }, { passive: true });
         }
     });
 });
