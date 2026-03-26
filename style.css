@@ -1,15 +1,15 @@
 :root {
-    --color-pakistan-green: #283B0A;
-    --color-avodade: #5E891B;
-    --color-yellow-green: #B8D062;
-    --color-wisteria: #BAACEB;
-    --color-ultra-violet: #5F5AA5;
+    --color-burgundy: #6c0820;
+    --color-lapis-lazuli: #3d5d91;
+    --color-cherry-blossom-pink: #f2aebc;
+    --color-misty-rose: #f2dcdb;
+    --color-silver-lake-blue: #5ab6cb;
 
-    --bg-main: var(--color-wisteria);
-    --bg-alt: var(--color-yellow-green);
-    --text-main: var(--color-pakistan-green);
-    --text-muted: var(--color-avodade);
-    --accent: var(--color-ultra-violet);
+    --bg-main: var(--color-misty-rose);
+    --bg-alt: var(--color-cherry-blossom-pink);
+    --text-main: var(--color-burgundy);
+    --text-muted: var(--color-lapis-lazuli);
+    --accent: var(--color-silver-lake-blue);
 
     /* Typography */
     --font-heading: 'Playfair Display', serif;
@@ -71,7 +71,7 @@ ul {
 .section-title {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: var(--color-pakistan-green);
+    color: var(--color-burgundy);
     position: relative;
     display: inline-block;
 }
@@ -94,8 +94,8 @@ ul {
 }
 
 .alternate-bg {
-    background-color: rgba(238, 215, 161, 0.3);
-    /* slightly transparent gold */
+    background-color: rgba(242, 174, 188, 0.3);
+    /* slightly transparent cherry blossom pink */
 }
 
 /* Navigation */
@@ -108,8 +108,8 @@ ul {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(247, 239, 210, 0.85);
-    /* cream with opacity */
+    background: rgba(242, 220, 219, 0.85);
+    /* misty rose with opacity */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(138, 133, 131, 0.2);
     transition: var(--transition);
@@ -117,12 +117,12 @@ ul {
 
 .navbar.scrolled {
     padding: 10px 5%;
-    box-shadow: 0 4px 20px rgba(71, 92, 108, 0.05);
+    box-shadow: 0 4px 20px rgba(108, 8, 32, 0.05);
 }
 
 .logo {
     font-size: 1.8rem;
-    color: var(--color-ultra-violet);
+    color: var(--color-silver-lake-blue);
     font-style: italic;
     cursor: pointer;
 }
@@ -163,7 +163,7 @@ ul {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: var(--color-pakistan-green);
+    background-color: var(--color-burgundy);
     transition: var(--transition);
 }
 
@@ -189,7 +189,7 @@ ul {
 }
 
 .hero-title .highlight {
-    color: var(--color-ultra-violet);
+    color: var(--color-silver-lake-blue);
     font-style: italic;
 }
 
@@ -203,8 +203,8 @@ ul {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: var(--color-pakistan-green);
-    color: var(--color-wisteria);
+    background-color: var(--color-burgundy);
+    color: var(--color-misty-rose);
     font-weight: 500;
     border-radius: var(--radius);
     transition: var(--transition);
@@ -213,10 +213,10 @@ ul {
 
 .btn:hover {
     background-color: transparent;
-    color: var(--color-pakistan-green);
-    border-color: var(--color-pakistan-green);
+    color: var(--color-burgundy);
+    border-color: var(--color-burgundy);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(71, 92, 108, 0.1);
+    box-shadow: 0 10px 20px rgba(108, 8, 32, 0.1);
 }
 
 /* Abstract Shapes in Hero */
@@ -241,7 +241,7 @@ ul {
 .shape-1 {
     width: 400px;
     height: 400px;
-    background-color: var(--color-yellow-green);
+    background-color: var(--color-cherry-blossom-pink);
     top: -100px;
     right: -50px;
     animation-delay: 0s;
@@ -250,7 +250,7 @@ ul {
 .shape-2 {
     width: 300px;
     height: 300px;
-    background-color: var(--color-ultra-violet);
+    background-color: var(--color-silver-lake-blue);
     bottom: -50px;
     right: 20%;
     opacity: 0.4;
@@ -260,7 +260,7 @@ ul {
 .shape-3 {
     width: 200px;
     height: 200px;
-    background-color: var(--color-avodade);
+    background-color: var(--color-lapis-lazuli);
     top: 30%;
     left: -50px;
     opacity: 0.3;
@@ -307,7 +307,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    border: 2px solid var(--color-ultra-violet);
+    border: 2px solid var(--color-silver-lake-blue);
     border-radius: var(--radius);
     z-index: -1;
     transform: translate(-15px, 15px);
@@ -321,7 +321,7 @@ ul {
 .image-placeholder {
     width: 100%;
     height: 400px;
-    background: linear-gradient(135deg, var(--color-pakistan-green) 0%, var(--color-avodade) 100%);
+    background: linear-gradient(135deg, var(--color-burgundy) 0%, var(--color-lapis-lazuli) 100%);
     border-radius: var(--radius);
     display: flex;
     justify-content: center;
@@ -330,7 +330,7 @@ ul {
 }
 
 .placeholder-text {
-    color: var(--color-wisteria);
+    color: var(--color-misty-rose);
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -349,52 +349,52 @@ ul {
     overflow: hidden;
     height: 350px;
     cursor: pointer;
-    background-color: var(--color-avodade);
+    background-color: var(--color-lapis-lazuli);
 }
 
 /* Different Placeholder Gradients to simulate images */
 .gallery-item:nth-child(1) {
-    background: linear-gradient(45deg, var(--color-pakistan-green), var(--color-yellow-green));
+    background: linear-gradient(45deg, var(--color-burgundy), var(--color-cherry-blossom-pink));
 }
 
 .gallery-item:nth-child(2) {
-    background: linear-gradient(45deg, var(--color-ultra-violet), var(--color-avodade));
+    background: linear-gradient(45deg, var(--color-silver-lake-blue), var(--color-lapis-lazuli));
 }
 
 .gallery-item:nth-child(3) {
-    background: linear-gradient(45deg, var(--color-yellow-green), var(--color-ultra-violet));
+    background: linear-gradient(45deg, var(--color-cherry-blossom-pink), var(--color-silver-lake-blue));
 }
 
 .gallery-item:nth-child(4) {
-    background: linear-gradient(135deg, var(--color-pakistan-green), var(--color-avodade));
+    background: linear-gradient(135deg, var(--color-burgundy), var(--color-lapis-lazuli));
 }
 
 .type-3d.gallery-item:nth-child(1) {
-    background: linear-gradient(135deg, #2a3a45, var(--color-pakistan-green));
+    background: linear-gradient(135deg, #2a3a45, var(--color-burgundy));
 }
 
 .type-3d.gallery-item:nth-child(2) {
-    background: linear-gradient(135deg, var(--color-avodade), #4f4c4a);
+    background: linear-gradient(135deg, var(--color-lapis-lazuli), #4f4c4a);
 }
 
 .type-3d.gallery-item:nth-child(3) {
-    background: linear-gradient(135deg, #8a6c42, var(--color-yellow-green));
+    background: linear-gradient(135deg, #8a6c42, var(--color-cherry-blossom-pink));
 }
 
 .type-physical.gallery-item:nth-child(1) {
-    background: linear-gradient(to right, var(--color-ultra-violet), var(--color-yellow-green));
+    background: linear-gradient(to right, var(--color-silver-lake-blue), var(--color-cherry-blossom-pink));
 }
 
 .type-physical.gallery-item:nth-child(2) {
-    background: linear-gradient(to right, var(--color-pakistan-green), var(--color-ultra-violet));
+    background: linear-gradient(to right, var(--color-burgundy), var(--color-silver-lake-blue));
 }
 
 .type-physical.gallery-item:nth-child(3) {
-    background: radial-gradient(circle, var(--color-avodade), var(--color-pakistan-green));
+    background: radial-gradient(circle, var(--color-lapis-lazuli), var(--color-burgundy));
 }
 
 .type-physical.gallery-item:nth-child(4) {
-    background: radial-gradient(circle, var(--color-yellow-green), var(--color-ultra-violet));
+    background: radial-gradient(circle, var(--color-cherry-blossom-pink), var(--color-silver-lake-blue));
 }
 
 .item-overlay {
@@ -403,8 +403,8 @@ ul {
     left: 0;
     width: 100%;
     padding: 30px;
-    background: linear-gradient(to top, rgba(71, 92, 108, 0.9), transparent);
-    color: var(--color-wisteria);
+    background: linear-gradient(to top, rgba(108, 8, 32, 0.9), transparent);
+    color: var(--color-misty-rose);
     transition: var(--transition);
 }
 
@@ -423,7 +423,7 @@ ul {
 
 .item-overlay p {
     font-size: 0.9rem;
-    color: var(--color-yellow-green);
+    color: var(--color-cherry-blossom-pink);
     transform: translateY(20px);
     opacity: 0;
     transition: var(--transition);
@@ -465,8 +465,8 @@ ul {
 
 /* Footer */
 footer {
-    background-color: var(--color-pakistan-green);
-    color: var(--color-wisteria);
+    background-color: var(--color-burgundy);
+    color: var(--color-misty-rose);
     text-align: center;
     padding: 80px 20px 40px;
 }
@@ -474,19 +474,19 @@ footer {
 .footer-content h2 {
     font-size: 3rem;
     margin-bottom: 30px;
-    color: var(--color-yellow-green);
+    color: var(--color-cherry-blossom-pink);
 }
 
 .footer-content .btn {
-    background-color: var(--color-ultra-violet);
-    color: var(--color-wisteria);
+    background-color: var(--color-silver-lake-blue);
+    color: var(--color-misty-rose);
     margin-bottom: 60px;
 }
 
 .footer-content .btn:hover {
-    background-color: var(--color-wisteria);
-    color: var(--color-ultra-violet);
-    border-color: var(--color-wisteria);
+    background-color: var(--color-misty-rose);
+    color: var(--color-silver-lake-blue);
+    border-color: var(--color-misty-rose);
 }
 
 .social-links {
@@ -497,16 +497,16 @@ footer {
 }
 
 .social-links a {
-    color: var(--color-avodade);
+    color: var(--color-lapis-lazuli);
     font-weight: 500;
 }
 
 .social-links a:hover {
-    color: var(--color-ultra-violet);
+    color: var(--color-silver-lake-blue);
 }
 
 .copyright {
-    color: var(--color-avodade);
+    color: var(--color-lapis-lazuli);
     font-size: 0.9rem;
 }
 
@@ -528,7 +528,7 @@ footer {
         top: 0;
         height: 100vh;
         width: 70%;
-        background-color: var(--color-pakistan-green);
+        background-color: var(--color-burgundy);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -540,12 +540,12 @@ footer {
     }
 
     .nav-links li a {
-        color: var(--color-wisteria);
+        color: var(--color-misty-rose);
         font-size: 1.5rem;
     }
 
     .nav-links li a::after {
-        background-color: var(--color-yellow-green);
+        background-color: var(--color-cherry-blossom-pink);
     }
 
     .hamburger {
@@ -555,7 +555,7 @@ footer {
 
     .hamburger.active span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
-        background-color: var(--color-wisteria);
+        background-color: var(--color-misty-rose);
     }
 
     .hamburger.active span:nth-child(2) {
@@ -564,7 +564,7 @@ footer {
 
     .hamburger.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-        background-color: var(--color-wisteria);
+        background-color: var(--color-misty-rose);
     }
 
     .hero-title {
