@@ -556,6 +556,8 @@ footer {
     background-color: var(--color-misty-rose);
     opacity: 0.4;
     transition: opacity 0.2s;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .carousel-dot.active {

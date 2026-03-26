@@ -94,33 +94,63 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             };
 
-            // Scrubbing logic on mousemove (hover)
-            carousel.addEventListener('mousemove', (e) => {
-                const rect = carousel.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const width = rect.width;
-                
-                // Calculate which slide to show based on mouse X position
-                const percentage = Math.max(0, Math.min(1, x / width));
-                const slideIndex = Math.floor(percentage * slides.length);
-                const safeIndex = slideIndex === slides.length ? slides.length - 1 : slideIndex;
-                
-                showSlide(safeIndex);
+            let currentSlide = 0;
+            let startX = 0;
+            let isDragging = false;
+
+            // Mouse Drag Support
+            carousel.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.clientX;
+                e.preventDefault(); // prevents native image drag
             });
 
-            // Touch fallback for mobile swiping intuition
-            carousel.addEventListener('touchmove', (e) => {
-                const rect = carousel.getBoundingClientRect();
-                const touch = e.touches[0];
-                const x = touch.clientX - rect.left;
-                const width = rect.width;
+            carousel.addEventListener('mouseup', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                const diffX = startX - e.clientX;
                 
-                const percentage = Math.max(0, Math.min(1, x / width));
-                const slideIndex = Math.floor(percentage * slides.length);
-                const safeIndex = slideIndex === slides.length ? slides.length - 1 : slideIndex;
-                
-                showSlide(safeIndex);
+                // If swiped left
+                if (diffX > 40) {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                } 
+                // If swiped right
+                else if (diffX < -40) {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                }
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                isDragging = false;
+            });
+
+            // Touch Swipe Support
+            carousel.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
             }, { passive: true });
+
+            carousel.addEventListener('touchend', (e) => {
+                const diffX = startX - e.changedTouches[0].clientX;
+                
+                if (diffX > 40) {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                } else if (diffX < -40) {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                }
+            }, { passive: true });
+            
+            // Allow clicking directly on dots
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentSlide = i;
+                    showSlide(currentSlide);
+                });
+            });
         }
     });
 });
