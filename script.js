@@ -61,4 +61,22 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(el);
     });
+
+    // Carousel Logic
+    const carousels = document.querySelectorAll('.carousel-container');
+    
+    carousels.forEach(carousel => {
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        if (slides.length > 1) {
+            let currentSlide = 0;
+            // Add staggered interval to prevent identical animations starting at exactly the same time
+            setTimeout(() => {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }, 3000); // 3 seconds per slide
+            }, Math.random() * 2000);
+        }
+    });
 });
