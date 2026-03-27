@@ -158,9 +158,9 @@ ul {
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background-color: var(--color-burgundy);
+    background-color: var(--color-burgundy) !important;
     color: var(--color-misty-rose) !important;
-    border-radius: 30px;
+    border-radius: 12px; /* Düğme şekli için hap yerine hafifçe yuvarlatılmış dikdörtgen */
     transition: var(--transition);
     border: 1px solid transparent;
 }
