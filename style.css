@@ -768,8 +768,8 @@ footer {
 
 .chessboard {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
     width: 100%;
     height: 100%;
     gap: 2px;
@@ -779,6 +779,8 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    min-width: 0;
+    min-height: 0;
     cursor: zoom-in;
     transition: transform 0.3s;
 }
