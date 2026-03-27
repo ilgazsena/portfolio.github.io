@@ -774,7 +774,7 @@ footer {
     }
 
     .nav-cv-btn {
-        background-color: var(--color-misty-rose);
+        background-color: var(--color-cherry-blossom-pink) !important;
         color: var(--color-burgundy) !important;
         margin-top: 10px;
     }
