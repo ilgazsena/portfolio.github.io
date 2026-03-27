@@ -178,4 +178,41 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImgElement = document.getElementById('lightbox-img-element');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxImages = document.querySelectorAll('.lightbox-img');
+
+    if (lightbox && lightboxImgElement && lightboxClose) {
+        lightboxImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                // Slight delay to allow display flex to apply before opacity transition
+                setTimeout(() => {
+                    lightbox.classList.add('active');
+                }, 10);
+                lightboxImgElement.src = img.src;
+            });
+        });
+
+        // Close when clicking the close button
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+            }, 300); // match transition duration
+        });
+
+        // Close when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImgElement) {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
 });
